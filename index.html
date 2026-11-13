@@ -1,978 +1,416 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>住まいのリフォーム本館 | 筑後市・大木町・八女市</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>リフォーム本館｜筑後市の住まいのリフォーム・修繕</title>
+<meta name="description" content="福岡県筑後市のリフォーム本館。キッチン・お風呂・トイレの水まわり、内装、外壁・屋根、小さな修理まで。筑後市・八女市・久留米市ほか福岡県南部に対応。ご相談・お見積もり無料。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@500;700;900&amp;display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #1a2744;
-    --navy-dark: #0f1a33;
-    --blue: #2563a8;
-    --blue-light: #4a90d9;
-    --gold: #c9a84c;
-    --gold-light: #e8c96a;
-    --cream: #f8f5ef;
-    --white: #fff;
-    --text: #1a1a1a;
-    --gray: #666;
-    --border: #ddd;
-    --orange: #e07020;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-    color: var(--text);
-    background: #fff;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  a { text-decoration: none; color: inherit; }
-
-  /* ── TOP BAR ── */
-  .top-bar {
-    background: var(--navy-dark);
-    color: rgba(255,255,255,0.8);
-    text-align: center;
-    padding: 7px;
-    font-size: 12px;
-    letter-spacing: 0.05em;
-  }
-  .top-bar span {
-    color: var(--gold-light);
-    font-weight: 700;
-    margin: 0 8px;
-  }
-
-  /* ── HEADER ── */
-  header {
-    background: var(--navy);
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .logo-area {}
-  .logo-sub {
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    margin-bottom: 4px;
-  }
-  .logo-main {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
-  }
-  .logo-tags {
-    display: flex;
-    gap: 6px;
-    margin-top: 6px;
-  }
-  .logo-tag {
-    background: var(--gold);
-    color: var(--navy-dark);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 2px;
-  }
-
-  .header-center { text-align: center; }
-  .header-badge {
-    background: var(--gold);
-    color: var(--navy-dark);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 3px 14px;
-    border-radius: 2px;
-    margin-bottom: 6px;
-    display: inline-block;
-  }
-  .phone-number {
-    font-size: 34px;
-    font-weight: 900;
-    color: #fff;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .phone-icon { font-size: 26px; color: var(--gold); }
-  .header-hours { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 3px; }
-
-  .contact-btn {
-    background: var(--gold);
-    color: var(--navy-dark);
-    border-radius: 4px;
-    padding: 14px 22px;
-    font-weight: 700;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    transition: background 0.2s;
-    white-space: nowrap;
-  }
-  .contact-btn:hover { background: var(--gold-light); }
-
-  /* ── NAV ── */
-  nav {
-    background: var(--blue);
-    border-bottom: 3px solid var(--gold);
-  }
-  nav ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  nav ul li a {
-    display: block;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 13px 20px;
-    transition: background 0.2s;
-    letter-spacing: 0.05em;
-  }
-  nav ul li a:hover { background: var(--navy); }
-
-  /* ── HERO ── */
-  .hero {
-    position: relative;
-    background: var(--navy-dark);
-    min-height: 460px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1400&q=80') center/cover no-repeat;
-    opacity: 0.2;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(15,26,51,0.95) 40%, rgba(15,26,51,0.3));
-  }
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 50px 50px;
-    max-width: 600px;
-  }
-  .hero-label {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy-dark);
-    font-size: 11px;
-    font-weight: 700;
-    padding: 4px 14px;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-  }
-  .hero-region {
-    font-size: 16px;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 8px;
-    letter-spacing: 0.05em;
-  }
-  .hero-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 52px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
-  }
-  .hero-title span { color: var(--gold); }
-  .hero-sub {
-    font-size: 15px;
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 32px;
-    line-height: 1.8;
-  }
-  .hero-btns {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .hero-btn-primary {
-    background: var(--gold);
-    color: var(--navy-dark);
-    font-weight: 700;
-    font-size: 14px;
-    padding: 14px 28px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .hero-btn-primary:hover { background: var(--gold-light); }
-  .hero-btn-secondary {
-    background: transparent;
-    color: #fff;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 14px 28px;
-    border-radius: 3px;
-    border: 2px solid rgba(255,255,255,0.5);
-    cursor: pointer;
-    transition: border-color 0.2s;
-  }
-  .hero-btn-secondary:hover { border-color: #fff; }
-
-  /* ── FEATURES ── */
-  .features {
-    background: var(--cream);
-    padding: 50px 20px;
-  }
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .feature-card {
-    background: #fff;
-    border-top: 3px solid var(--gold);
-    padding: 24px 20px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  }
-  .feature-icon { font-size: 32px; margin-bottom: 10px; }
-  .feature-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-  .feature-desc { font-size: 12px; color: var(--gray); }
-
-  /* ── SECTION TITLE ── */
-  .section-title {
-    text-align: center;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-  .section-sub {
-    text-align: center;
-    font-size: 12px;
-    color: var(--gold);
-    letter-spacing: 0.15em;
-    font-weight: 700;
-    margin-bottom: 36px;
-  }
-
-  /* ── SERVICES ── */
-  .services { padding: 56px 20px; background: #fff; }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 16px;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  .service-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-  }
-  .service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  }
-  .service-img {
-    height: 100px;
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-  }
-  .service-body { padding: 14px 12px; }
-  .service-name {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-  .service-desc { font-size: 11px; color: var(--gray); line-height: 1.5; }
-
-  /* ── PRICING ── */
-  .pricing { padding: 56px 20px; background: var(--cream); }
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    max-width: 960px;
-    margin: 0 auto 16px;
-  }
-  .pricing-table {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-  .pricing-table-head {
-    background: var(--navy);
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .pricing-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 12px;
-  }
-  .pricing-row:last-child { border-bottom: none; }
-  .pricing-row .price { color: var(--orange); font-weight: 700; white-space: nowrap; }
-  .pricing-note {
-    text-align: center;
-    font-size: 11px;
-    color: var(--gray);
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  /* ── WHY ── */
-  .why { padding: 56px 20px; background: var(--navy); }
-  .why .section-title { color: #fff; }
-  .why .section-sub { color: var(--gold); }
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    max-width: 860px;
-    margin: 0 auto;
-  }
-  .why-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-left: 4px solid var(--gold);
-    padding: 20px 18px;
-    border-radius: 2px;
-  }
-  .why-num {
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .why-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 6px;
-  }
-  .why-desc { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.6; }
-
-  /* ── FLOW ── */
-  .flow { padding: 56px 20px; background: #fff; }
-  .flow-steps {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .flow-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex: 1;
-    min-width: 120px;
-    max-width: 160px;
-  }
-  .flow-step-icon {
-    width: 64px;
-    height: 64px;
-    background: var(--navy);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #fff;
-    margin-bottom: 10px;
-    position: relative;
-  }
-  .flow-step-num {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    background: var(--gold);
-    color: var(--navy-dark);
-    font-size: 10px;
-    font-weight: 900;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .flow-step-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-  .flow-step-desc { font-size: 11px; color: var(--gray); line-height: 1.5; }
-  .flow-arrow {
-    font-size: 22px;
-    color: var(--gold);
-    margin-top: 20px;
-    padding: 0 4px;
-  }
-  @media (max-width: 600px) {
-    .flow-arrow { display: none; }
-  }
-
-  /* ── AREA ── */
-  .area { padding: 50px 20px; background: var(--cream); }
-  .area-inner {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .area-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  .area-tag {
-    background: var(--navy);
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 2px;
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .area-note { font-size: 12px; color: var(--gray); margin-top: 16px; }
-
-  /* ── CTA ── */
-  .cta-section {
-    background: var(--navy-dark);
-    padding: 50px 20px;
-    text-align: center;
-  }
-  .cta-section h2 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 22px;
-    color: #fff;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .cta-section p {
-    color: rgba(255,255,255,0.7);
-    font-size: 13px;
-    margin-bottom: 28px;
-  }
-  .cta-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 16px;
-  }
-  .cta-phone-box {
-    background: #fff;
-    border-radius: 4px;
-    padding: 14px 28px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .cta-phone-num {
-    font-size: 32px;
-    font-weight: 900;
-    color: var(--navy);
-  }
-  .cta-contact-btn {
-    background: var(--gold);
-    color: var(--navy-dark);
-    border-radius: 4px;
-    padding: 16px 28px;
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .cta-contact-btn:hover { background: var(--gold-light); }
-  .cta-hours { color: rgba(255,255,255,0.6); font-size: 12px; }
-
-  /* ── SISTER SITE ── */
-  .sister-site {
-    background: #f0f4f8;
-    padding: 30px 20px;
-    text-align: center;
-  }
-  .sister-site p {
-    font-size: 13px;
-    color: var(--gray);
-    margin-bottom: 10px;
-  }
-  .sister-btn {
-    display: inline-block;
-    background: #2d7a2d;
-    color: #fff;
-    padding: 10px 24px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 13px;
-    transition: opacity 0.2s;
-  }
-  .sister-btn:hover { opacity: 0.85; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #0a0f1e;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 16px;
-    font-size: 11px;
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-content > * {
-    animation: fadeInUp 0.6s ease both;
-  }
-  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
-  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
-  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
-  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
-  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
-
-  @media (max-width: 600px) {
-    header { flex-direction: column; align-items: flex-start; }
-    .hero-title { font-size: 34px; }
-    .hero-content { padding: 30px 20px; }
-    nav ul li a { padding: 10px 10px; font-size: 11px; }
-  }
+body{margin:0}
+a{color:#2F5D46}a:hover{color:#1E3F2F}
 </style>
+<style>@media (max-width:600px){h1{font-size:34px!important}h2{font-size:26px!important}}</style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  筑後市・大木町・八女市の地域密着リフォーム専門店
-  <span>｜</span>
-  お見積り無料
-  <span>｜</span>
-  経験豊富な職人が施工
+<div style="font-family: 'Noto Sans JP', sans-serif; color: #1F2421; background: #FFFFFF; line-height: 1.8">
+
+<header style="border-bottom: 1px solid #E3E7E1; background: #FFFFFF">
+<div style="max-width: 1160px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1F2421">
+<span style="width: 40px; height: 40px; border-radius: 8px; background: #2F5D46; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>
+</span>
+<span style="font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: 0.04em">リフォーム本館</span>
+</a>
+<nav aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 15px; font-weight: 500">
+<a href="#services" style="text-decoration: none; color: #1F2421; padding: 10px 0">サービス</a>
+<a href="#works" style="text-decoration: none; color: #1F2421; padding: 10px 0">施工事例</a>
+<a href="#flow" style="text-decoration: none; color: #1F2421; padding: 10px 0">ご依頼の流れ</a>
+<a href="#company" style="text-decoration: none; color: #1F2421; padding: 10px 0">会社概要</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<a href="tel:08039043830" style="text-decoration: none; color: #1F2421; font-weight: 700; font-size: 17px; padding: 10px 4px; display: flex; align-items: center; gap: 6px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F5D46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z"></path></svg>
+080-3904-3830
+</a>
+<a href="#contact" style="text-decoration: none; background: #2F5D46; color: #FFFFFF; font-weight: 700; padding: 12px 22px; border-radius: 999px; font-size: 15px">無料相談・お見積もり</a>
 </div>
-
-<!-- HEADER -->
-<header>
-  <div class="logo-area">
-    <div class="logo-sub">住まいの</div>
-    <div class="logo-main">リフォーム本館</div>
-    <div class="logo-tags">
-      <span class="logo-tag">地域密着</span>
-      <span class="logo-tag">職人施工</span>
-      <span class="logo-tag">安心価格</span>
-    </div>
-  </div>
-
-  <div class="header-center">
-    <div class="header-badge">お見積り無料・即日対応OK！</div>
-    <div class="phone-number">
-      <span class="phone-icon">📞</span>
-      080-3904-3830
-    </div>
-    <div class="header-hours">受付時間：8:00〜20:00（年中無休）</div>
-  </div>
-
-  <a class="contact-btn" href="https://lin.ee/tWhiNsT">
-    <span style="background:#fff;color:#06C755;font-weight:900;border-radius:4px;padding:2px 6px;font-size:11px;">LINE</span>
-    <div>
-      LINEで相談する
-      <div style="font-size:10px;font-weight:400;">簡単・お気軽に！</div>
-    </div>
-  </a>
+</div>
 </header>
 
-<!-- NAV -->
-<nav>
-  <ul>
-    <li><a href="#">トップページ</a></li>
-    <li><a href="#services">サービス内容</a></li>
-    <li><a href="#pricing">料金目安</a></li>
-    <li><a href="#why">選ばれる理由</a></li>
-    <li><a href="#flow">ご依頼の流れ</a></li>
-    <li><a href="#area">対応エリア</a></li>
-    <li><a href="#contact">お問い合わせ</a></li>
-  </ul>
-</nav>
+<section id="top" style="background: #F3F5F1">
+<div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-weight: 700; color: #2F5D46; letter-spacing: 0.08em; font-size: 15px">住まいのリフォーム・修繕</p>
+<h1 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 48px; line-height: 1.35">暮らしに合わせて、<br>住まいをもう一度。</h1>
+<p style="margin: 0; font-size: 17px; color: #434B45">キッチン・お風呂・トイレの水まわりから、内装、外壁・屋根まで。小さな修理も、まるごとリフォームも、まずはお気軽にご相談ください。</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<a href="#contact" style="text-decoration: none; background: #2F5D46; color: #FFFFFF; font-weight: 700; padding: 16px 28px; border-radius: 999px; font-size: 16px">無料で相談する</a>
+<a href="tel:08039043830" style="text-decoration: none; background: #FFFFFF; color: #1F2421; border: 1px solid #C9D1C6; font-weight: 700; padding: 15px 26px; border-radius: 999px; font-size: 16px; display: flex; align-items: center; gap: 8px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.900a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.800.7a2 2 0 0 1 1.8 2z"></path></svg>
+080-3904-3830
+</a>
+<a href="https://line.me/R/ti/p/@248xjbnm" style="text-decoration: none; background: #FFFFFF; color: #1F2421; border: 2px solid #06C755; font-weight: 700; padding: 14px 24px; border-radius: 999px; font-size: 16px; display: flex; align-items: center; gap: 8px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06A847" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8 9.5 9.5 0 0 1-3.3-.6L3 21l1.6-4.4A7.6 7.6 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8 8.4 8.4 0 0 1 9 8z"></path></svg>
+LINEで相談
+</a>
+</div>
+<p style="margin: 0; font-size: 14px; color: #5A635C">受付時間 8:30〜20:00</p>
+</div>
+<div style="flex: 1 1 400px; min-width: 0; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; background: #E6ECE2">
+<svg viewBox="0 0 400 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" role="img" aria-label="足場を組んでリフォーム中の住まいのイラスト">
+<rect width="400" height="300" fill="#E6ECE2"></rect>
+<circle cx="335" cy="60" r="28" fill="#F4E3B5"></circle>
+<rect x="0" y="240" width="400" height="60" fill="#B9C8B1"></rect>
+<path d="M85 142 L190 68 L295 142 Z" fill="#2F5D46"></path>
+<rect x="102" y="140" width="176" height="102" fill="#FFFFFF"></rect>
+<rect x="124" y="162" width="42" height="34" fill="#CFE0EA" stroke="#8FA39A" stroke-width="3"></rect>
+<rect x="214" y="162" width="42" height="34" fill="#CFE0EA" stroke="#8FA39A" stroke-width="3"></rect>
+<rect x="172" y="186" width="36" height="56" fill="#C8A47E"></rect>
+<g stroke="#7A6A55" stroke-width="4" stroke-linecap="round">
+<line x1="305" y1="242" x2="305" y2="108"></line><line x1="345" y1="242" x2="345" y2="108"></line>
+<line x1="305" y1="140" x2="345" y2="140"></line><line x1="305" y1="175" x2="345" y2="175"></line><line x1="305" y1="210" x2="345" y2="210"></line>
+</g>
+<rect x="40" y="202" width="42" height="40" rx="4" fill="#E1B95C"></rect>
+<rect x="47" y="194" width="28" height="10" rx="3" fill="#C99A3A"></rect>
+<path d="M286 120 l14 -14 l8 8 l-14 14 z" fill="#E1B95C"></path>
+</svg>
+</div>
+</div>
+</section>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-label">地域密着リフォーム専門店</div>
-    <div class="hero-region">筑後市・大木町・八女市エリア対応</div>
-    <div class="hero-title">住まいの<span>リフォーム</span><br>本館</div>
-    <div class="hero-sub">
-      クロス張替えから水回りリフォームまで、<br>
-      経験豊富な職人がまごころ込めて施工します。
-    </div>
-    <div class="hero-btns">
-      <a class="hero-btn-primary" href="#contact">無料お見積りはこちら</a>
-      <a class="hero-btn-secondary" href="#services">サービス内容を見る</a>
-    </div>
-  </div>
+<section id="services" style="padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px; text-align: center">
+<p style="margin: 0; color: #2F5D46; font-weight: 700; letter-spacing: 0.12em; font-size: 14px">SERVICE</p>
+<h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 34px">リフォームのご相談内容</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+
+<div style="border: 1px solid #E3E7E1; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">キッチン</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">システムキッチンの交換、コンロ・食洗機の入れ替え、レイアウト変更など。</p>
+<p style="margin: 0; color: #2F5D46; font-weight: 700; font-size: 15px">キッチン交換 ¥500,000〜／コンロ交換 ¥100,000〜</p>
 </div>
 
-<!-- FEATURES -->
-<div class="features">
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">📋</div>
-      <div class="feature-title">見積り無料</div>
-      <div class="feature-desc">現地確認・お見積りは完全無料です</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔨</div>
-      <div class="feature-title">職人施工</div>
-      <div class="feature-desc">経験豊富な職人が丁寧に施工します</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📍</div>
-      <div class="feature-title">地域密着</div>
-      <div class="feature-desc">筑後エリアに特化した地元の専門店</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🛡️</div>
-      <div class="feature-title">アフターフォロー</div>
-      <div class="feature-desc">施工後も安心のアフターサポート</div>
-    </div>
-  </div>
+<div style="border: 1px solid #E3E7E1; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">お風呂・洗面</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">ユニットバスの交換、浴室乾燥機の設置、洗面台の入れ替えなど。</p>
+<p style="margin: 0; color: #2F5D46; font-weight: 700; font-size: 15px">ユニットバス交換 ¥600,000〜／洗面台 ¥150,000〜</p>
 </div>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-title">サービス内容</div>
-  <div class="section-sub">SERVICE</div>
-  <div class="services-grid">
-
-    <div class="service-card">
-      <div class="service-img">🖼️</div>
-      <div class="service-body">
-        <div class="service-name">クロス張替え</div>
-        <div class="service-desc">壁紙の張替えで部屋の雰囲気を一新。豊富な種類からお選びいただけます。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🪵</div>
-      <div class="service-body">
-        <div class="service-name">フローリング工事</div>
-        <div class="service-desc">床の張替え・上貼り工事。クッションフロアにも対応しています。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🌿</div>
-      <div class="service-body">
-        <div class="service-name">ウッドデッキ施工</div>
-        <div class="service-desc">庭に新しい空間を。天然木・人工木どちらにも対応します。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🗄️</div>
-      <div class="service-body">
-        <div class="service-name">棚・収納製作</div>
-        <div class="service-desc">オーダーメイドの棚や収納スペースを製作します。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🚿</div>
-      <div class="service-body">
-        <div class="service-name">水回りリフォーム</div>
-        <div class="service-desc">トイレ・洗面所・キッチンなど水回りの改修工事に対応します。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🔧</div>
-      <div class="service-body">
-        <div class="service-name">小規模修繕</div>
-        <div class="service-desc">ドアの建付け・雨漏りなど、小さな修繕もお任せください。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🏠</div>
-      <div class="service-body">
-        <div class="service-name">外壁塗装</div>
-        <div class="service-desc">外壁・屋根の塗装で住まいを守ります。耐久性の高い塗料を使用。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🍳</div>
-      <div class="service-body">
-        <div class="service-name">システムキッチン交換</div>
-        <div class="service-desc">老朽化したキッチンを新しくリフォーム。使いやすい動線にご提案します。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🛁</div>
-      <div class="service-body">
-        <div class="service-name">ユニットバス交換</div>
-        <div class="service-desc">浴室まるごとリフォーム。快適で清潔なバスルームに生まれ変わります。</div>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-img">🪵</div>
-      <div class="service-body">
-        <div class="service-name">床張り替え</div>
-        <div class="service-desc">既存床を剥がして新しい床材に張り替え。傷んだ床も美しく仕上げます。</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="section-title">料金目安</div>
-  <div class="section-sub">PRICE</div>
-  <div class="pricing-grid">
-
-    <div class="pricing-table">
-      <div class="pricing-table-head">🖼️ 内装工事</div>
-      <div>
-        <div class="pricing-row"><span>クロス張替え（6畳）</span><span class="price">4〜8万円</span></div>
-        <div class="pricing-row"><span>フローリング上貼り（6畳）</span><span class="price">8〜20万円</span></div>
-        <div class="pricing-row"><span>クッションフロア（トイレ等）</span><span class="price">2〜6万円</span></div>
-      </div>
-    </div>
-
-    <div class="pricing-table">
-      <div class="pricing-table-head">🚿 水回り・設備</div>
-      <div>
-        <div class="pricing-row"><span>トイレ交換</span><span class="price">10〜25万円</span></div>
-        <div class="pricing-row"><span>給湯器交換</span><span class="price">15〜35万円</span></div>
-      </div>
-    </div>
-
-    <div class="pricing-table">
-      <div class="pricing-table-head">🌿 外構・その他</div>
-      <div>
-        <div class="pricing-row"><span>ウッドデッキ施工</span><span class="price">要見積り</span></div>
-        <div class="pricing-row"><span>棚・収納製作</span><span class="price">要見積り</span></div>
-        <div class="pricing-row"><span>小規模修繕</span><span class="price">1万円〜</span></div>
-      </div>
-    </div>
-
-    <div class="pricing-table">
-      <div class="pricing-table-head">🏠 外壁塗装</div>
-      <div>
-        <div class="pricing-row"><span>外壁塗装（30坪目安）</span><span class="price">60〜120万円</span></div>
-        <div class="pricing-row"><span>屋根塗装（30坪目安）</span><span class="price">30〜60万円</span></div>
-        <div class="pricing-row"><span>外壁＋屋根セット</span><span class="price">要見積り</span></div>
-      </div>
-    </div>
-
-    <div class="pricing-table">
-      <div class="pricing-table-head">🍳 キッチン・浴室</div>
-      <div>
-        <div class="pricing-row"><span>システムキッチン交換</span><span class="price">50〜150万円</span></div>
-        <div class="pricing-row"><span>ユニットバス交換</span><span class="price">60〜150万円</span></div>
-      </div>
-    </div>
-
-    <div class="pricing-table">
-      <div class="pricing-table-head">🪵 床工事</div>
-      <div>
-        <div class="pricing-row"><span>床張り替え（6畳）</span><span class="price">15〜30万円</span></div>
-        <div class="pricing-row"><span>フローリング上貼り（6畳）</span><span class="price">8〜20万円</span></div>
-        <div class="pricing-row"><span>クッションフロア（トイレ等）</span><span class="price">2〜6万円</span></div>
-      </div>
-    </div>
-
-  </div>
-  <div class="pricing-note">※上記は目安料金です。現地確認後に正式なお見積りをご提示します。お見積りは無料です。</div>
-</section>
-
-<!-- WHY -->
-<section class="why" id="why">
-  <div class="section-title">選ばれる理由</div>
-  <div class="section-sub">WHY CHOOSE US</div>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-num">01</div>
-      <div class="why-title">地域密着で迅速対応</div>
-      <div class="why-desc">筑後エリアに特化しているから、すぐに駆けつけられます。</div>
-    </div>
-    <div class="why-card">
-      <div class="why-num">02</div>
-      <div class="why-title">わかりやすい見積り</div>
-      <div class="why-desc">内訳が明確な見積書をご提示。追加費用は事前にご説明します。</div>
-    </div>
-    <div class="why-card">
-      <div class="why-num">03</div>
-      <div class="why-title">経験豊富な職人施工</div>
-      <div class="why-desc">熟練した職人が丁寧に施工。仕上がりの品質にこだわります。</div>
-    </div>
-    <div class="why-card">
-      <div class="why-num">04</div>
-      <div class="why-title">アフターフォロー対応</div>
-      <div class="why-desc">施工後も安心。気になることがあればいつでもご連絡ください。</div>
-    </div>
-  </div>
-</section>
-
-<!-- FLOW -->
-<section class="flow" id="flow">
-  <div class="section-title">ご依頼の流れ</div>
-  <div class="section-sub">FLOW</div>
-  <div class="flow-steps">
-    <div class="flow-step">
-      <div class="flow-step-icon">
-        📞
-        <div class="flow-step-num">1</div>
-      </div>
-      <div class="flow-step-title">お問い合わせ</div>
-      <div class="flow-step-desc">お電話またはメールでお気軽にご連絡ください</div>
-    </div>
-    <div class="flow-arrow">▶</div>
-    <div class="flow-step">
-      <div class="flow-step-icon">
-        🏠
-        <div class="flow-step-num">2</div>
-      </div>
-      <div class="flow-step-title">現地確認</div>
-      <div class="flow-step-desc">現場を確認し、ご要望をお伺いします</div>
-    </div>
-    <div class="flow-arrow">▶</div>
-    <div class="flow-step">
-      <div class="flow-step-icon">
-        📋
-        <div class="flow-step-num">3</div>
-      </div>
-      <div class="flow-step-title">お見積り</div>
-      <div class="flow-step-desc">わかりやすい見積書を無料でご提示します</div>
-    </div>
-    <div class="flow-arrow">▶</div>
-    <div class="flow-step">
-      <div class="flow-step-icon">
-        🔨
-        <div class="flow-step-num">4</div>
-      </div>
-      <div class="flow-step-title">工事</div>
-      <div class="flow-step-desc">熟練職人が丁寧・迅速に施工します</div>
-    </div>
-    <div class="flow-arrow">▶</div>
-    <div class="flow-step">
-      <div class="flow-step-icon">
-        🎉
-        <div class="flow-step-num">5</div>
-      </div>
-      <div class="flow-step-title">お引渡し</div>
-      <div class="flow-step-desc">仕上がりをご確認いただいて完了です</div>
-    </div>
-  </div>
-</section>
-
-<!-- AREA -->
-<section class="area" id="area">
-  <div class="section-title">対応エリア</div>
-  <div class="section-sub">SERVICE AREA</div>
-  <div class="area-inner">
-    <p>筑後市を中心に、周辺エリア全域に対応しています！</p>
-    <div class="area-list">
-      <span class="area-tag">大木町</span>
-      <span class="area-tag">筑後市</span>
-      <span class="area-tag">八女市</span>
-      <span class="area-tag">久留米市</span>
-      <span class="area-tag">柳川市</span>
-      <span class="area-tag">大川市</span>
-    </div>
-    <p class="area-note">上記以外のエリアもお気軽にご相談ください！</p>
-  </div>
-</section>
-
-<!-- CTA -->
-<div class="cta-section" id="contact">
-  <h2>まずはお気軽にご相談ください！</h2>
-  <p>お見積りは無料です。お気軽にお問い合わせください。</p>
-  <div class="cta-buttons">
-    <div class="cta-phone-box">
-      <span style="font-size:26px;color:var(--navy);">📞</span>
-      <div>
-        <div style="font-size:11px;color:var(--gray);font-weight:600;">24時間受付中</div>
-        <div class="cta-phone-num">080-3904-3830</div>
-        <div style="font-size:11px;color:var(--gray);">受付時間：8:00〜20:00（年中無休）</div>
-      </div>
-    </div>
-    <a class="cta-contact-btn" href="https://lin.ee/tWhiNsT" style="background:#06C755;">
-      💬 LINEで相談する
-    </a>
-    <a class="cta-contact-btn" href="mailto:info@reform-honkan.jp">
-      ✉️ メールで問い合わせる
-    </a>
-  </div>
-  <div class="cta-hours">※メールは24時間受付中。翌営業日以内にご返信します。</div>
+<div style="border: 1px solid #E3E7E1; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">トイレ</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">便器・便座の交換、手すりの設置、床や壁の張り替えなど。</p>
+<p style="margin: 0; color: #2F5D46; font-weight: 700; font-size: 15px">便器交換 ¥150,000〜／床・壁も同時 ¥200,000〜</p>
 </div>
 
-<!-- SISTER SITE -->
-<div class="sister-site">
-  <p>🤝 姉妹サイト｜便利屋・何でも屋をお探しの方はこちら</p>
-  <a class="sister-btn" href="https://gongyuank23-cmd.github.io/otasuke-honkan">
-    便利屋 お助け本館 →
-  </a>
+<div style="border: 1px solid #E3E7E1; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">内装・床・壁</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">クロスやフローリングの張り替え、和室から洋室への変更など。</p>
+<p style="margin: 0; color: #2F5D46; font-weight: 700; font-size: 15px">クロス（6畳）¥50,000〜／フローリング（6畳）¥100,000〜</p>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  © 住まいのリフォーム本館 All Rights Reserved.
+<div style="border: 1px solid #E3E7E1; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">外壁・屋根</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">外壁の塗装、屋根の補修・葺き替え、雨漏りの点検など。</p>
+<p style="margin: 0; color: #2F5D46; font-weight: 700; font-size: 15px">外壁塗装（30坪）¥800,000〜／屋根塗装 ¥400,000〜</p>
+</div>
+
+<div style="border: 1px solid #E3E7E1; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+<h3 style="margin: 0; font-size: 20px; font-weight: 700">修理・その他</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">建具の不具合、網戸の張り替え、バリアフリー工事など。</p>
+<p style="margin: 0; color: #2F5D46; font-weight: 700; font-size: 15px">小修理 ¥10,000〜／手すり設置 ¥20,000〜</p>
+</div>
+
+</div>
+<p style="margin: 0; text-align: center; font-size: 14px; color: #5A635C">※金額は一般的な相場をもとにした目安です。現地調査のうえ、正式なお見積もりをご提示します。</p>
+</div>
+</section>
+
+<section style="padding: 80px 24px; background: #F3F5F1">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px; text-align: center">
+<p style="margin: 0; color: #2F5D46; font-weight: 700; letter-spacing: 0.12em; font-size: 14px">REASON</p>
+<h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 34px">リフォーム本館が大切にしていること</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 32px; color: #2F5D46">01</p>
+<h3 style="margin: 0; font-size: 19px">わかりやすいお見積もり</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">工事内容と金額を一つひとつご説明し、ご納得いただいてから進めます。</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 32px; color: #2F5D46">02</p>
+<h3 style="margin: 0; font-size: 19px">小さな工事もお気軽に</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">蛇口の交換や建具の不具合など、ちょっとした修理からご相談いただけます。</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 32px; color: #2F5D46">03</p>
+<h3 style="margin: 0; font-size: 19px">工事のあとも安心</h3>
+<p style="margin: 0; color: #434B45; font-size: 15px">工事が終わったあとも、気になる点があればお気軽にご連絡ください。すぐにお伺いします。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="works" style="padding: 80px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px; text-align: center">
+<p style="margin: 0; color: #2F5D46; font-weight: 700; letter-spacing: 0.12em; font-size: 14px">WORKS</p>
+<h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 34px">施工事例　ビフォー・アフター</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #5A635C">BEFORE</p>
+<div style="aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden">
+<svg viewBox="0 0 200 150" width="100%" height="100%" role="img" aria-label="施工前：古く色あせたキッチンのイラスト">
+<rect width="200" height="150" fill="#D6CDBB"></rect>
+<rect x="20" y="22" width="160" height="34" fill="#8B6B4A"></rect>
+<line x1="73" y1="22" x2="73" y2="56" stroke="#6E5236" stroke-width="2"></line><line x1="126" y1="22" x2="126" y2="56" stroke="#6E5236" stroke-width="2"></line>
+<rect x="14" y="86" width="172" height="8" fill="#A89A86"></rect>
+<rect x="20" y="94" width="160" height="56" fill="#8B6B4A"></rect>
+<line x1="73" y1="94" x2="73" y2="150" stroke="#6E5236" stroke-width="2"></line><line x1="126" y1="94" x2="126" y2="150" stroke="#6E5236" stroke-width="2"></line>
+<rect x="88" y="82" width="26" height="6" fill="#8A8A86"></rect>
+<circle cx="40" cy="72" r="5" fill="#B5A58C"></circle><circle cx="150" cy="68" r="7" fill="#B5A58C"></circle>
+<path d="M150 22 l6 14 l-4 6" stroke="#5E4630" stroke-width="1.5" fill="none"></path>
+</svg>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #2F5D46">AFTER</p>
+<div style="aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden">
+<svg viewBox="0 0 200 150" width="100%" height="100%" role="img" aria-label="施工後：明るいシステムキッチンのイラスト">
+<rect width="200" height="150" fill="#F4F6F2"></rect>
+<line x1="60" y1="0" x2="60" y2="18" stroke="#7A857C" stroke-width="1.5"></line><path d="M50 18 h20 l-4 8 h-12 z" fill="#2F5D46"></path>
+<rect x="128" y="14" width="40" height="30" fill="#DCE3D8"></rect><path d="M132 44 h32 l6 12 h-44 z" fill="#C9D1C6"></path>
+<rect x="14" y="84" width="172" height="8" fill="#E9E4DA"></rect>
+<rect x="20" y="92" width="160" height="58" fill="#FFFFFF" stroke="#DCE3D8" stroke-width="2"></rect>
+<line x1="73" y1="92" x2="73" y2="150" stroke="#DCE3D8" stroke-width="2"></line><line x1="126" y1="92" x2="126" y2="150" stroke="#DCE3D8" stroke-width="2"></line>
+<rect x="36" y="104" width="22" height="3" rx="1.5" fill="#2F5D46"></rect><rect x="89" y="104" width="22" height="3" rx="1.5" fill="#2F5D46"></rect><rect x="142" y="104" width="22" height="3" rx="1.5" fill="#2F5D46"></rect>
+<rect x="134" y="78" width="28" height="6" rx="2" fill="#3C3C3C"></rect>
+<path d="M88 84 v-14 a6 6 0 0 1 12 0" stroke="#7A857C" stroke-width="2.5" fill="none"></path>
+</svg>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; color: #2F5D46; font-weight: 700">キッチン</p>
+<h3 style="margin: 0; font-size: 17px">システムキッチンへの交換</h3>
+<p style="margin: 0; font-size: 14px; color: #5A635C">工期目安 3〜5日／費用相場 ¥500,000〜</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #5A635C">BEFORE</p>
+<div style="aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden">
+<svg viewBox="0 0 200 150" width="100%" height="100%" role="img" aria-label="施工前：タイル張りの古い浴室のイラスト">
+<rect width="200" height="150" fill="#BDBDB5"></rect>
+<g stroke="#A3A39B" stroke-width="1.5">
+<line x1="0" y1="25" x2="200" y2="25"></line><line x1="0" y1="50" x2="200" y2="50"></line><line x1="0" y1="75" x2="200" y2="75"></line>
+<line x1="25" y1="0" x2="25" y2="150"></line><line x1="50" y1="0" x2="50" y2="150"></line><line x1="75" y1="0" x2="75" y2="150"></line><line x1="100" y1="0" x2="100" y2="150"></line><line x1="125" y1="0" x2="125" y2="150"></line><line x1="150" y1="0" x2="150" y2="150"></line><line x1="175" y1="0" x2="175" y2="150"></line>
+</g>
+<rect x="30" y="88" width="90" height="62" fill="#9FB3B8"></rect>
+<rect x="30" y="88" width="90" height="8" fill="#8AA0A6"></rect>
+<rect x="148" y="40" width="4" height="40" fill="#8A8A86"></rect><circle cx="150" cy="38" r="6" fill="#8A8A86"></circle>
+<path d="M60 10 l8 18 l-6 10 l10 14" stroke="#7E7E76" stroke-width="1.5" fill="none"></path>
+<circle cx="170" cy="120" r="6" fill="#A8A08A"></circle>
+</svg>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #2F5D46">AFTER</p>
+<div style="aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden">
+<svg viewBox="0 0 200 150" width="100%" height="100%" role="img" aria-label="施工後：明るいユニットバスのイラスト">
+<rect width="200" height="150" fill="#EEF3F5"></rect>
+<rect x="0" y="0" width="70" height="150" fill="#DDE7EA"></rect>
+<rect x="138" y="22" width="40" height="50" rx="4" fill="#FFFFFF" stroke="#C9D7DB" stroke-width="2"></rect>
+<rect x="20" y="84" width="110" height="66" rx="8" fill="#FFFFFF" stroke="#C9D7DB" stroke-width="2"></rect>
+<rect x="28" y="92" width="94" height="18" rx="4" fill="#CFE6EE"></rect>
+<rect x="150" y="80" width="3" height="50" fill="#7A857C"></rect><circle cx="151.5" cy="80" r="5" fill="#7A857C"></circle>
+<rect x="146" y="130" width="40" height="20" fill="#C9D7DB"></rect>
+</svg>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; color: #2F5D46; font-weight: 700">お風呂</p>
+<h3 style="margin: 0; font-size: 17px">在来浴室からユニットバスへ</h3>
+<p style="margin: 0; font-size: 14px; color: #5A635C">工期目安 4〜7日／費用相場 ¥700,000〜</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #5A635C">BEFORE</p>
+<div style="aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden">
+<svg viewBox="0 0 200 150" width="100%" height="100%" role="img" aria-label="施工前：色あせてひび割れた外壁の家のイラスト">
+<rect width="200" height="150" fill="#D9DCD6"></rect>
+<rect x="0" y="128" width="200" height="22" fill="#A7AE9E"></rect>
+<path d="M40 70 L100 30 L160 70 Z" fill="#6E6A64"></path>
+<rect x="50" y="68" width="100" height="60" fill="#B7AE9C"></rect>
+<rect x="62" y="82" width="22" height="18" fill="#9FA9A8"></rect><rect x="116" y="82" width="22" height="18" fill="#9FA9A8"></rect>
+<rect x="90" y="100" width="20" height="28" fill="#7E6A55"></rect>
+<path d="M58 108 l6 -8 l-2 -6 l6 -6" stroke="#8A7F6C" stroke-width="1.5" fill="none"></path>
+<path d="M140 110 l-4 -8 l4 -6" stroke="#8A7F6C" stroke-width="1.5" fill="none"></path>
+<path d="M120 74 q6 6 0 10 q-6 4 0 8" fill="#C9C0AC"></path>
+</svg>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #2F5D46">AFTER</p>
+<div style="aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden">
+<svg viewBox="0 0 200 150" width="100%" height="100%" role="img" aria-label="施工後：塗り替えてきれいになった家のイラスト">
+<rect width="200" height="150" fill="#E6ECE2"></rect>
+<circle cx="172" cy="26" r="12" fill="#F4E3B5"></circle>
+<rect x="0" y="128" width="200" height="22" fill="#B9C8B1"></rect>
+<path d="M40 70 L100 30 L160 70 Z" fill="#2F5D46"></path>
+<rect x="50" y="68" width="100" height="60" fill="#F7F4EC"></rect>
+<rect x="62" y="82" width="22" height="18" fill="#CFE0EA" stroke="#8FA39A" stroke-width="2"></rect><rect x="116" y="82" width="22" height="18" fill="#CFE0EA" stroke="#8FA39A" stroke-width="2"></rect>
+<rect x="90" y="100" width="20" height="28" fill="#C8A47E"></rect>
+<circle cx="30" cy="118" r="12" fill="#8FB08A"></circle><circle cx="176" cy="118" r="10" fill="#8FB08A"></circle>
+</svg>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; color: #2F5D46; font-weight: 700">外壁</p>
+<h3 style="margin: 0; font-size: 17px">外壁・屋根の塗り替え</h3>
+<p style="margin: 0; font-size: 14px; color: #5A635C">工期目安 10〜14日／費用相場 ¥800,000〜（30坪の場合）</p>
+</div>
+
+</div>
+<p style="margin: 0; text-align: center; font-size: 13px; color: #5A635C">※画像はイメージイラストです。実際の施工写真に差し替えてご利用ください。</p>
+</div>
+</section>
+
+<section id="flow" style="padding: 80px 24px; background: #F3F5F1">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 8px; text-align: center">
+<p style="margin: 0; color: #2F5D46; font-weight: 700; letter-spacing: 0.12em; font-size: 14px">FLOW</p>
+<h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 34px">ご依頼の流れ</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px">
+
+<div style="background: #FFFFFF; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 13px; font-weight: 700; color: #2F5D46">STEP 1</p>
+<h3 style="margin: 0; font-size: 18px">お問い合わせ</h3>
+<p style="margin: 0; font-size: 14px; color: #434B45">お電話またはLINEからご連絡ください。</p>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 13px; font-weight: 700; color: #2F5D46">STEP 2</p>
+<h3 style="margin: 0; font-size: 18px">現地調査</h3>
+<p style="margin: 0; font-size: 14px; color: #434B45">ご自宅に伺い、現状とご要望をお聞きします。</p>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 13px; font-weight: 700; color: #2F5D46">STEP 3</p>
+<h3 style="margin: 0; font-size: 18px">お見積もり</h3>
+<p style="margin: 0; font-size: 14px; color: #434B45">工事内容と金額をご説明します。</p>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 13px; font-weight: 700; color: #2F5D46">STEP 4</p>
+<h3 style="margin: 0; font-size: 18px">ご契約・施工</h3>
+<p style="margin: 0; font-size: 14px; color: #434B45">ご納得いただいてから工事を始めます。</p>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 13px; font-weight: 700; color: #2F5D46">STEP 5</p>
+<h3 style="margin: 0; font-size: 18px">完成・お引き渡し</h3>
+<p style="margin: 0; font-size: 14px; color: #434B45">仕上がりを一緒に確認します。</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="company" style="padding: 80px 24px">
+<div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 8px; text-align: center">
+<p style="margin: 0; color: #2F5D46; font-weight: 700; letter-spacing: 0.12em; font-size: 14px">COMPANY</p>
+<h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 34px">会社概要</h2>
+</div>
+<div style="border-top: 1px solid #E3E7E1">
+
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 8px; border-bottom: 1px solid #E3E7E1">
+<p style="margin: 0; flex: 0 0 140px; font-weight: 700">屋号</p>
+<p style="margin: 0; flex: 1 1 300px; color: #434B45">リフォーム本館</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 8px; border-bottom: 1px solid #E3E7E1">
+<p style="margin: 0; flex: 0 0 140px; font-weight: 700">代表者</p>
+<p style="margin: 0; flex: 1 1 300px; color: #434B45">宮原 一真</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 8px; border-bottom: 1px solid #E3E7E1">
+<p style="margin: 0; flex: 0 0 140px; font-weight: 700">所在地</p>
+<p style="margin: 0; flex: 1 1 300px; color: #434B45">福岡県筑後市羽犬塚189-2</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 8px; border-bottom: 1px solid #E3E7E1">
+<p style="margin: 0; flex: 0 0 140px; font-weight: 700">電話番号</p>
+<p style="margin: 0; flex: 1 1 300px"><a href="tel:08039043830" style="color: #2F5D46; font-weight: 700">080-3904-3830</a></p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 8px; border-bottom: 1px solid #E3E7E1">
+<p style="margin: 0; flex: 0 0 140px; font-weight: 700">LINE</p>
+<p style="margin: 0; flex: 1 1 300px; color: #434B45">@248xjbnm</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 8px; border-bottom: 1px solid #E3E7E1">
+<p style="margin: 0; flex: 0 0 140px; font-weight: 700">営業時間</p>
+<p style="margin: 0; flex: 1 1 300px; color: #434B45">8:30〜20:00</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 4px 24px; padding: 18px 8px; border-bottom: 1px solid #E3E7E1">
+<p style="margin: 0; flex: 0 0 140px; font-weight: 700">対応エリア</p>
+<p style="margin: 0; flex: 1 1 300px; color: #434B45">筑後市・八女市・久留米市・広川町・大川市・柳川市 ほか福岡県南部</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="contact" style="padding: 80px 24px; background: #2F5D46">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px; color: #FFFFFF">
+<p style="margin: 0; font-weight: 700; letter-spacing: 0.12em; font-size: 14px">CONTACT</p>
+<h2 style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 34px">ご相談・お見積もりは無料です</h2>
+<p style="margin: 0; font-size: 16px">お電話またはLINEからお気軽にどうぞ。内容を確認のうえ、担当者よりご連絡いたします。</p>
+<a href="tel:08039043830" style="text-decoration: none; color: #FFFFFF; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 36px">080-3904-3830</a>
+<p style="margin: 0; font-size: 14px">受付時間 8:30〜20:00</p>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; align-self: center; background: #FFFFFF; border-radius: 16px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px; color: #1F2421">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAAByElEQVR4Xu1ZQW7DMAyzivz/yxpISo5bbMgOHtCUc4CtdYO6ZiiKkiPHxXhc3fB/x8v4JMRGNkESV+ItX9WeMz9pt9d7OQb2P8YIgBB4F8Gpmv3Fd1yvcp87gMcQAEGuEA2AU7M32stm1BuMzFhFdvMqP4y3XCUyY+Ca8jHc+MF4ER0iIzIpJAMMKZK85ZP7duz4pcADKqqRUdcyu2OV+3zHccZG8UF6ekbMffay6ZdSMCqvILMkowWT/GTTKjdxwQHBONkwM29jkmZ4IF7ABBBDwFSyJU6Y8uMHsQAQfFXE1pxdvn0wqUyrLiGRopRH9eLHoViRglA9GD6TJG7xgqcfqGrFCBZzjBPGCv548QN7p5SeulG1XU954UG/Lq/RNS3Uo2w74PLCA7tVJ4j2i5EyBQTBY4YH9FTZVmpR/gPlnFhihoc8RvV/VNg2OGXM7OIlGBZnkVvOo22IFx5LK6zSjHqo1S+001Pqh3ofbck0onvsXvx46q+Xgk4rRon1w6NzS9mObnyo6DXDY336OpqSHePBFMXFkB+lGOoT6p8ayn5+TH5D+rm6EMaOYf9j6a+z7uehQ7eCDOuXp6O4PzvV8NKgT9rtF+cBsxRbEsDrAAAAAElFTkSuQmCC" alt="LINE友だち追加用QRコード（@248xjbnm）" width="160" height="160" style="width: 160px; height: 160px; display: block">
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 22px">LINEでかんたん相談</p>
+<p style="margin: 0; font-size: 15px; color: #434B45">友だち追加して、気になる箇所の写真を送るだけ。概算のお見積もりをお伝えします。</p>
+<a href="https://line.me/R/ti/p/@248xjbnm" style="align-self: flex-start; text-decoration: none; background: #FFFFFF; color: #1F2421; border: 2px solid #06C755; font-weight: 700; padding: 12px 24px; border-radius: 999px; font-size: 16px; min-height: 48px; box-sizing: border-box; display: flex; align-items: center; gap: 8px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#06A847" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8 9.5 9.5 0 0 1-3.3-.6L3 21l1.6-4.4A7.6 7.6 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8 8.4 8.4 0 0 1 9 8z"></path></svg>
+友だち追加する
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="background: #1F2421; color: #D5DAD3; padding: 40px 24px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 18px; color: #FFFFFF">リフォーム本館</p>
+<p style="margin: 0">福岡県筑後市羽犬塚189-2</p>
+<p style="margin: 0">TEL <a href="tel:08039043830" style="color: #FFFFFF; font-weight: 700">080-3904-3830</a></p>
+</div>
+<p style="margin: 0; align-self: flex-end">© リフォーム本館</p>
+</div>
 </footer>
 
+</div>
 </body>
 </html>
